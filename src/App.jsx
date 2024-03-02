@@ -17,7 +17,7 @@ const App = () => {
   }, []);
 
   if (!todos) {
-    return <p>Loading...</p>;
+    return <p>Loading Todos...</p>;
   }
 
   let filtered = [...todos];
