@@ -1,0 +1,17 @@
+button {
+  background-color: pink;
+}
+
+/* .completed {
+  content: "Incomplete";
+} */
+/* .completed::before {
+  content: "Incomplete";
+  visibility: visible;
+  background-color: blue;
+} */
+.completed:focus-within {
+  content: "Complete";
+  visibility: visible;
+  background-color: red;
+}
