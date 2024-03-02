@@ -3,28 +3,18 @@ import Todo from "./components/todo";
 import Controls from "./components/Controls";
 import { getTodos } from "./dataContoller/fetching";
 import { useSelector } from "react-redux";
-import { getNew, getSearch, getSort, selectTodo } from "./redux/todoSlice";
+import { getSearch, getSort, selectTodo } from "./redux/todoSlice";
 import "./css/App.css";
+import Header from "./components/Header";
+
 const App = () => {
   const todos = useSelector(selectTodo);
   const search = useSelector(getSearch);
   const sort = useSelector(getSort);
-  // const addNew = useSelector(getNew);
 
   useEffect(() => {
     getTodos();
   }, []);
-
-  // const addTodoButton = () => {
-  //   const copy = [...todos];
-  //   copy.push({
-  //     userId: 1,
-  //     id: Math.random(),
-  //     title: newTodo,
-  //     completed: false,
-  //   });
-  //   setTodos(copy);
-  // };
 
   if (!todos) {
     return <p>Loading...</p>;
@@ -45,7 +35,6 @@ const App = () => {
       if (b.todo > a.todo) {
         return -1;
       }
-      return 0;
     });
 
     if (sort === "Newest") {
@@ -60,9 +49,9 @@ const App = () => {
         if (a.title < b.title) {
           return -1;
         }
-        return 0;
       });
     }
+
     if (sort === "Z-A") {
       filtered.sort((a, b) => {
         if (a.title > b.title) {
@@ -77,10 +66,14 @@ const App = () => {
 
     return (
       <>
+        <Header />
         <Controls todos={filtered} />
-        {filtered.map((todo, index) => {
-          return <Todo {...todo} todos={filtered} key={index} index={index} />;
-        })}
+        {filtered &&
+          filtered.map((todo, index) => {
+            return (
+              <Todo {...todo} todos={filtered} key={index} index={index} />
+            );
+          })}
       </>
     );
   }

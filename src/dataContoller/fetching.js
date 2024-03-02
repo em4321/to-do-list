@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const getTodos = async () => {
   const { data } = await axios.get(
-    `https://jsonplaceholder.typicode.com/todos`
+    `https://jsonplaceholder.typicode.com/todos?userId=1`
   );
 
   store.dispatch(addTodos(data));

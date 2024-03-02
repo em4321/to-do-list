@@ -1,17 +1,15 @@
-button {
-  background-color: pink;
+h1 {
+  text-align: center;
 }
 
-/* .completed {
-  content: "Incomplete";
-} */
-/* .completed::before {
-  content: "Incomplete";
-  visibility: visible;
-  background-color: blue;
-} */
-.completed:focus-within {
-  content: "Complete";
-  visibility: visible;
-  background-color: red;
+button {
+  background-color: pink;
+  border-radius: 10px;
+  width: 40px;
+  height: 33px;
+  border: 1px solid black;
+  margin: 10px;
+}
+.todoAndDelete {
+  display: flex;
 }

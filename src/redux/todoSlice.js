@@ -28,14 +28,14 @@ export const todoSlice = createSlice({
       state.todos[{ index }] === action.payload;
     },
     deleteTodoButton: (state, action) => {
-      const index = state.todos.findIndex((todo) => {
-        return todo === action.payload;
+      const index = state.todos.findIndex((title) => {
+        return title === action.payload;
       });
       state.todos.splice(index, 1);
     },
-    // toggleDone: (state, actions) => {
+    // toggleDone: (state, action) => {
     //   const index = state.todos.findIndex((todo) => {
-    //     return todo === action.payload;
+    //     return todo.title === action.payload;
     //   });
     //   state.todos[index].completed = !state.todos[index].completed;
     // },

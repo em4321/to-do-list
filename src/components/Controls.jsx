@@ -12,7 +12,7 @@ const Controls = () => {
   const todos = useSelector(selectTodo);
   return (
     <>
-      <h1>Sort tasks by order they were added or alphapetically:</h1>
+      <h2>Sort tasks alphabetically or by oldest/newest:</h2>
       <div>
         <div className="sortSelect">
           <select
@@ -36,7 +36,7 @@ const Controls = () => {
             <option value="Z-A">Z-A</option>
           </select>
         </div>
-        <h1>Search for existing tasks:</h1>
+        <h2>Search for existing tasks:</h2>
         <input
           onInput={(e) => {
             dispatch(searchTodo(e.target.value));
@@ -56,7 +56,7 @@ const Controls = () => {
         />
       </div>
       <div>
-        <h1>Add new tasks to the list:</h1>
+        <h2>Add new tasks to the list:</h2>
         <input
           onInput={(e) => {
             dispatch(addNewTodo(e.target.value));
@@ -78,13 +78,6 @@ const Controls = () => {
         <button
           onClick={() => {
             dispatch(addTodoButton(todos));
-          }}
-          style={{
-            borderRadius: "10px",
-            width: "40px",
-            height: "33px",
-            border: "1px solid black",
-            marginTop: "10px",
           }}
         >
           +
