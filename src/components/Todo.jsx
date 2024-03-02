@@ -10,14 +10,15 @@ const Todo = ({ todo, index, completed, title }) => {
   return (
     <>
       <div className="todoAndDelete" key={index}>
-        <h3
+        <h4
           className={completed ? "completed" : "incomplete"}
           style={{
             backgroundColor: completed ? "#f66e85" : "",
           }}
         >
-          {title.toUpperCase()} - Task: {completed ? "Completed" : "Incomplete"}
-        </h3>
+          {" "}
+          * {title} - Task: {completed ? "Completed" : "Incomplete"}
+        </h4>
 
         {/* <button
           className="completed"

@@ -11,32 +11,25 @@ const Controls = () => {
   const dispatch = useDispatch();
   const todos = useSelector(selectTodo);
   return (
-    <>
-      <h2>Sort tasks alphabetically or by oldest/newest:</h2>
+    <div className="controls">
+      <div className="sortSelect">
+        <select
+          onChange={(e) => {
+            dispatch(sortSelect(e.target.value));
+          }}
+          style={{
+            margin: "10px",
+            width: "80px",
+          }}
+        >
+          <option value="">Sort</option>
+          <option value="Oldest">Oldest</option>
+          <option value="Newest">Newest</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+        </select>
+      </div>
       <div>
-        <div className="sortSelect">
-          <select
-            onChange={(e) => {
-              dispatch(sortSelect(e.target.value));
-            }}
-            style={{
-              borderRadius: "10px",
-              textAlign: "center",
-              width: "120px",
-              height: "30px",
-              color: "black",
-              border: "1px solid black",
-              marginTop: "10px",
-            }}
-          >
-            <option value="">Please Select</option>
-            <option value="Oldest">Oldest</option>
-            <option value="Newest">Newest</option>
-            <option value="A-Z">A-Z</option>
-            <option value="Z-A">Z-A</option>
-          </select>
-        </div>
-        <h2>Search for existing tasks:</h2>
         <input
           onInput={(e) => {
             dispatch(searchTodo(e.target.value));
@@ -44,19 +37,14 @@ const Controls = () => {
           type="text"
           id="search"
           name="search"
-          placeholder="Type here..."
+          placeholder="Search existing tasks:"
           style={{
-            borderRadius: "10px",
-            textAlign: "center",
-            width: "120px",
-            height: "30px",
-            border: "1px solid black",
-            marginTop: "10px",
+            margin: "10px",
+            width: "150px",
           }}
         />
       </div>
       <div>
-        <h2>Add new tasks to the list:</h2>
         <input
           onInput={(e) => {
             dispatch(addNewTodo(e.target.value));
@@ -66,13 +54,8 @@ const Controls = () => {
           name="new"
           placeholder="Add a new task!"
           style={{
-            borderRadius: "10px",
-            textAlign: "center",
-            width: "120px",
-            height: "30px",
-            border: "1px solid black",
-            marginRight: "5px",
             marginTop: "10px",
+            marginBottom: "80px",
           }}
         />
         <button
@@ -83,7 +66,7 @@ const Controls = () => {
           +
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -11,10 +11,10 @@ const Header = () => {
   });
   return (
     <>
-      <h1>My Todo List!</h1>
-      <p>
+      <h1>My Todo List</h1>
+      <h3>
         {total} completed tasks out of {todos.length}
-      </p>
+      </h3>
     </>
   );
 };
