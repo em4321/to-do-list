@@ -10,16 +10,25 @@ const Todo = ({ todo, index, completed, title }) => {
   return (
     <>
       <div className="todoAndDelete" key={index}>
+        <p>{completed ? "Done" : "Incomplete"}</p>
+        <button
+          onClick={() => {
+            dispatch(deleteTodoButton(todo));
+            console.log("Deleted Todo");
+          }}
+        >
+          X
+        </button>
         <h4
           className={completed ? "completed" : "incomplete"}
           style={{
-            backgroundColor: completed ? "#f66e85" : "",
+            backgroundColor: completed ? "#f66e85" : "#87d5d8",
+            textDecoration: completed ? "line-through" : "",
           }}
         >
           {" "}
-          * {title} - Task: {completed ? "Completed" : "Incomplete"}
+          * {title}
         </h4>
-
         {/* <button
           className="completed"
           style={{
@@ -31,14 +40,6 @@ const Todo = ({ todo, index, completed, title }) => {
         >
           Done
         </button> */}
-        <button
-          onClick={() => {
-            dispatch(deleteTodoButton(todo));
-            console.log("Deleted Todo");
-          }}
-        >
-          X
-        </button>
       </div>
     </>
   );

@@ -37,7 +37,7 @@ const Controls = () => {
           type="text"
           id="search"
           name="search"
-          placeholder="Search existing tasks:"
+          placeholder="Search existing tasks"
           style={{
             margin: "10px",
             width: "150px",
@@ -52,10 +52,9 @@ const Controls = () => {
           type="text"
           id="new"
           name="new"
-          placeholder="Add a new task!"
+          placeholder="Add new task!"
           style={{
             marginTop: "10px",
-            marginBottom: "80px",
           }}
         />
         <button
@@ -63,7 +62,7 @@ const Controls = () => {
             dispatch(addTodoButton(todos));
           }}
         >
-          +
+          Add
         </button>
       </div>
     </div>
