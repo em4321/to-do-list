@@ -11,7 +11,7 @@ const Header = () => {
   });
   return (
     <>
-      <h1>My Todo List</h1>
+      <h1>My To Do List</h1>
       <h3>
         {total} completed tasks out of {todos.length}
       </h3>

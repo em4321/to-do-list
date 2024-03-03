@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
     <>
-      <p>
-        <small>This is a footer!!!</small>
+      <p style={{ textAlign: "center", backgroundColor: "#d5d1d1" }}>
+        <small>Footer!!!</small>
       </p>
     </>
   );

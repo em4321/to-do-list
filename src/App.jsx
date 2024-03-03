@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { getSearch, getSort, selectTodo } from "./redux/todoSlice";
 import "./css/App.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
   const todos = useSelector(selectTodo);
@@ -74,6 +75,7 @@ const App = () => {
               <Todo {...todo} todos={filtered} key={index} index={index} />
             );
           })}
+        <Footer />
       </>
     );
   }
