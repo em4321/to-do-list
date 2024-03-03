@@ -2,11 +2,8 @@ import { useDispatch } from "react-redux";
 import { deleteTodoButton, toggleDone } from "../redux/todoSlice";
 
 const Todo = ({ index, completed, title }) => {
-  // const Todo = ({ todos, completed, title, index, todo }) => {
   const dispatch = useDispatch();
 
-  // return todos.map((index, title, completed) => {
-  // return todos.map((todo, index) => {
   return (
     <>
       <div className="container" key={index}>
@@ -45,7 +42,6 @@ const Todo = ({ index, completed, title }) => {
       </div>
     </>
   );
-  // });
 };
 
 export default Todo;
