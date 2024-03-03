@@ -18,7 +18,18 @@ const App = () => {
   }, []);
 
   if (!todos) {
-    return <p>Loading Todos...</p>;
+    return (
+      <p
+        style={{
+          textAlign: "center",
+          backgroundColor: "#d5d1d1",
+          marginTop: "380px",
+          fontSize: "50px",
+        }}
+      >
+        Loading To Do List...
+      </p>
+    );
   }
 
   let filtered = [...todos];
