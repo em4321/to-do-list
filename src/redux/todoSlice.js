@@ -25,14 +25,12 @@ export const todoSlice = createSlice({
         title: newTodo,
         completed: false,
       });
-      state.todos[{ index }] === action.payload;
+      state.todos[index] === action.payload;
     },
     deleteTodoButton: (state, action) => {
-      console.log(action.payload);
       const index = state.todos.findIndex((todo) => {
         return todo.title === action.payload;
       });
-
       state.todos.splice(index, 1);
       console.log(state.todos);
     },

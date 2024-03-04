@@ -8,7 +8,7 @@ const Todo = ({ index, completed, title }) => {
     <>
       <div className="container" key={index}>
         <div className="buttons">
-          <p>{completed ? "Done" : "Incomplete"}</p>
+          <p>{completed ? "Complete" : "Incomplete"}</p>
           <button
             onClick={() => {
               dispatch(deleteTodoButton(title));
