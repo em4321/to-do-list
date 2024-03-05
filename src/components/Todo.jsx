@@ -37,7 +37,7 @@ const Todo = ({ index, completed, title }) => {
           }}
         >
           {" "}
-          * {title}
+          {title}
         </h4>
       </div>
     </>

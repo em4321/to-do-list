@@ -19,6 +19,9 @@ export const todoSlice = createSlice({
     },
     addTodoButton: (state, action) => {
       const newTodo = state.addNew;
+      if (newTodo.length < 4) {
+        return;
+      }
       const duplicateToDo = state.todos.some((todo) => {
         return todo.title === newTodo;
       });
