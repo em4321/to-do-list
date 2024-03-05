@@ -19,6 +19,12 @@ export const todoSlice = createSlice({
     },
     addTodoButton: (state, action) => {
       const newTodo = state.addNew;
+      const duplicateToDo = state.todos.some((todo) => {
+        return todo.title === newTodo;
+      });
+      if (duplicateToDo) {
+        return;
+      }
       const index = state.todos.push({
         userId: 1,
         id: Math.random(),
@@ -27,6 +33,7 @@ export const todoSlice = createSlice({
       });
       state.todos[index] === action.payload;
     },
+
     deleteTodoButton: (state, action) => {
       const index = state.todos.findIndex((todo) => {
         return todo.title === action.payload;

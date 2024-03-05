@@ -27,6 +27,8 @@ const Controls = () => {
           <option value="Newest">Newest</option>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A</option>
+          <option value="Completed">Completed</option>
+          <option value="Incomplete">Incomplete</option>
         </select>
       </div>
       <div>

@@ -74,6 +74,28 @@ const App = () => {
         }
       });
     }
+
+    if (sort === "Incomplete") {
+      filtered.sort((a, b) => {
+        if (a.completed > b.completed) {
+          return 1;
+        }
+        if (a.completed < b.completed) {
+          return -1;
+        }
+      });
+    }
+    if (sort === "Completed") {
+      filtered.sort((a, b) => {
+        if (a.completed > b.completed) {
+          return -1;
+        }
+        if (a.completed < b.completed) {
+          return 1;
+        }
+      });
+    }
+
     console.log(filtered);
 
     return (
