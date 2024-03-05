@@ -19,7 +19,7 @@ export const todoSlice = createSlice({
     },
     addTodoButton: (state, action) => {
       const newTodo = state.addNew;
-      if (newTodo.length < 4) {
+      if (newTodo.length < 3) {
         return;
       }
       const duplicateToDo = state.todos.some((todo) => {
